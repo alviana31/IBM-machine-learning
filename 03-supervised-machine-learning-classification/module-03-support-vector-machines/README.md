@@ -1,63 +1,29 @@
-# Module 3 – Support Vector Machines (SVM)
+# SVM Notebooks
 
-## Overview
+This folder contains Jupyter Notebook files for practicing Support Vector Machines (SVM).
 
-This module introduces Support Vector Machines (SVM), a supervised machine learning algorithm used for classification. SVM works by finding an optimal decision boundary that separates different classes of data.
+## Planned Notebooks
 
-The topics include SVM classification, cost functions, regularization, and Gaussian kernels.
+| No. | Notebook | Description |
+|---|---|---|
+| 1 | `01-introduction-to-svm.ipynb` | Exploring the basic concepts of SVM and decision boundaries. |
+| 2 | `02-svm-classification-and-regularization.ipynb` | Building an SVM classifier and exploring the regularization parameter. |
+| 3 | `03-gaussian-kernel.ipynb` | Practicing SVM classification using the Gaussian (RBF) kernel. |
 
-## Topics Covered
+## Notebook Contents
 
-1. Introduction to Support Vector Machines
-2. Classification with SVM
-3. SVM Cost Function
-4. Regularization
-5. Gaussian Kernels
-6. SVM Workflow and Implementation
+Each notebook may include:
 
-## Learning Objectives
+1. Importing required libraries.
+2. Loading the dataset.
+3. Exploring and preparing the data.
+4. Splitting data into training and testing sets.
+5. Building an SVM classification model.
+6. Experimenting with kernel and parameter settings.
+7. Making predictions.
+8. Evaluating model performance.
+9. Writing conclusions.
 
-After completing this module, I expect to be able to:
+## Notes
 
-- Explain the basic concept of Support Vector Machines.
-- Understand how SVM separates different classes.
-- Describe the role of support vectors and decision boundaries.
-- Understand the purpose of the SVM cost function.
-- Explain regularization in SVM.
-- Understand the use of Gaussian kernels.
-- Implement an SVM classification model using Python and Scikit-learn.
-
-## Tools and Libraries
-
-- Python
-- Jupyter Notebook
-- NumPy
-- Pandas
-- Matplotlib
-- Scikit-learn
-
-## Repository Structure
-
-```text
-module-03-support-vector-machines/
-├── README.md
-├── notes/
-│   ├── 01-introduction-to-svm.md
-│   ├── 02-svm-classification-and-regularization.md
-│   └── 03-gaussian-kernel-and-implementation.md
-└── notebooks/
-    └── README.md
-```
-
-## Learning Progress
-
-- [ ] Understand the basic concept of SVM.
-- [ ] Learn how SVM performs classification.
-- [ ] Understand the SVM cost function.
-- [ ] Study regularization.
-- [ ] Understand Gaussian kernels.
-- [ ] Practice implementing an SVM classifier.
-
-## References
-
-Course materials: *Supervised Machine Learning: Classification* – Module 3: Support Vector Machines (SVM).
+These notebooks are intended for practical exercises and experimentation. Actual datasets, model results, and evaluation values will be added after completing the exercises.
