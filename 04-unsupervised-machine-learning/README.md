@@ -1,31 +1,39 @@
-﻿# Module 4 – Decision Trees
+﻿# Module 1 – Introduction to Unsupervised Learning and K-Means Clustering
 
 ## Overview
 
-This module introduces Decision Trees as a supervised machine learning method for classification. A Decision Tree makes predictions by dividing data into smaller groups based on selected features and decision rules.
+This module introduces unsupervised learning and clustering techniques. It focuses on how unlabeled data can be grouped based on similarities between data points.
 
-The module covers the basic concepts of decision trees, how to build a decision tree, entropy-based splitting, and other splitting criteria.
-
-## Topics Covered
-
-1. Overview of Classification Algorithms
-2. Introduction to Decision Trees
-3. Building a Decision Tree
-4. Entropy-Based Splitting
-5. Other Splitting Criteria
-6. Advantages and Disadvantages of Decision Trees
+The main algorithm covered in this module is K-Means clustering, including its initialization process, the selection of the optimal number of clusters, and the Elbow Method. The module also introduces the Mixture of Gaussians approach.
 
 ## Learning Objectives
 
-After completing this module, I expect to be able to:
+After completing this module, I should be able to:
 
-- Explain the basic concept of Decision Trees.
-- Understand how a decision tree makes predictions.
-- Identify the main components of a decision tree.
-- Describe the process of building a decision tree.
-- Understand entropy-based splitting.
-- Recognize other criteria used to split data.
-- Identify the advantages and disadvantages of Decision Trees.
+- Explain the concept of unsupervised learning.
+- Understand clustering and its applications.
+- Describe how the K-Means algorithm works.
+- Understand centroid initialization and cluster assignment.
+- Determine the number of clusters using the Elbow Method.
+- Understand the basic concept of Mixture of Gaussians.
+- Implement clustering techniques using Python and Scikit-learn.
+
+## Topics Covered
+
+1. Introduction to Unsupervised Learning
+2. Use Cases of Clustering
+3. Introduction to Clustering
+4. K-Means Clustering
+5. K-Means Initialization
+6. Selecting the Right Number of Clusters
+7. Elbow Method and Applying K-Means
+8. Mixture of Gaussians
+
+## Notes
+
+- [Introduction to Unsupervised Learning](notes/01-introduction-to-unsupervised-learning.md)
+- [K-Means Clustering](notes/02-k-means-clustering.md)
+- [Selecting Clusters and Mixture of Gaussians](notes/03-selecting-clusters-and-mixture-of-gaussians.md)
 
 ## Tools and Libraries
 
@@ -36,28 +44,17 @@ After completing this module, I expect to be able to:
 - Matplotlib
 - Scikit-learn
 
-## Repository Structure
+## Practice
 
-```text
-module-04-decision-trees/
-├── README.md
-├── notes/
-│   ├── 01-introduction-to-decision-trees.md
-│   ├── 02-building-a-decision-tree.md
-│   └── 03-entropy-and-splitting-criteria.md
-└── notebooks/
-    └── README.md
-```
+The module includes K-Means demonstrations, a K-Means clustering practice lab, and a Mixture of Gaussians practice lab.
 
-## Learning Progress
+## Progress
 
-- [ ] Understand the concept of Decision Trees.
-- [ ] Learn the components of a decision tree.
-- [ ] Understand how to build a decision tree.
-- [ ] Study entropy-based splitting.
-- [ ] Explore other splitting criteria.
-- [ ] Identify the advantages and disadvantages of Decision Trees.
+- [ ] Review all learning materials
+- [ ] Complete K-Means practice
+- [ ] Complete Mixture of Gaussians practice
+- [ ] Complete Module 1 Quiz
 
-## References
+## Reference
 
-Course materials: *Supervised Machine Learning: Classification* – Module 4: Decision Trees.
+IBM Machine Learning – Unsupervised Machine Learning, Module 1.
