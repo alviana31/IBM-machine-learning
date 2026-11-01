@@ -1,28 +1,28 @@
-# KNN Notebooks
+# Module 2 Notebooks
 
-This folder contains Jupyter Notebook files for practicing the K-Nearest Neighbors (KNN) algorithm.
+This folder contains Jupyter Notebook files related to K-Nearest Neighbors (KNN) classification.
 
 ## Planned Notebooks
 
-| No. | Notebook | Description |
-|---|---|---|
-| 1 | `01-knn-classification.ipynb` | Implementing a KNN classifier. |
-| 2 | `02-distance-and-decision-boundary.ipynb` | Exploring distance measurements and decision boundaries. |
-| 3 | `03-feature-scaling-and-knn-evaluation.ipynb` | Applying feature scaling and evaluating the model. |
+| Notebook | Description |
+|---|---|
+| `01-knn-classification.ipynb` | Implementing KNN for classification |
+| `02-knn-distance-and-decision-boundary.ipynb` | Exploring distance measurements and decision boundaries |
+| `03-knn-feature-scaling.ipynb` | Comparing KNN with scaled and unscaled features |
 
-## Notebook Contents
+## Suggested Workflow
 
-Each notebook may include:
-
-1. Importing required libraries.
-2. Loading the dataset.
-3. Exploring and preparing the data.
-4. Splitting data into training and testing sets.
-5. Building a KNN classification model.
-6. Making predictions.
-7. Evaluating model performance.
-8. Writing conclusions.
+1. Load and explore the dataset.
+2. Separate features and target variables.
+3. Split the data into training and testing sets.
+4. Apply feature scaling when necessary.
+5. Train a KNN classification model.
+6. Generate predictions.
+7. Evaluate the model.
+8. Compare different K values if needed.
 
 ## Notes
 
-The notebooks are intended for practical exercises and experimentation. Actual datasets, model results, and evaluation values will be added after completing the exercises.
+Notebook files should contain the actual code, outputs, visualizations, and observations from the course labs.
+
+Do not add experimental results until the notebooks have been executed and the results have been reviewed.
