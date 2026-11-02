@@ -1,29 +1,32 @@
-# Unbalanced Classes Notebooks
+# Module 6 – Notebooks
 
-This folder contains Jupyter Notebook files for practicing techniques used to handle imbalanced classification datasets.
+This folder contains practical notebooks related to model interpretability and unbalanced classification.
 
-## Planned Notebooks
+## Suggested Notebook Activities
 
-| No. | Notebook | Description |
-|---|---|---|
-| 1 | `01-exploring-unbalanced-classes.ipynb` | Exploring class distributions and their effects on classification. |
-| 2 | `02-sampling-and-class-balancing.ipynb` | Practicing upsampling, downsampling, and other balancing techniques. |
-| 3 | `03-nearest-neighbor-and-balanced-bagging.ipynb` | Exploring NearMiss and balanced bagging approaches. |
+### 1. Model Interpretability
+- Train a classification model.
+- Compare a simple model with a more complex model.
+- Explore methods for explaining model predictions.
+- Examine how a surrogate model approximates a complex model.
 
-## Notebook Contents
+### 2. Modeling Unbalanced Classes
+- Inspect the class distribution.
+- Perform a stratified train-test split.
+- Apply random oversampling or undersampling.
+- Experiment with SMOTE and ADASYN.
+- Compare class weighting and balanced bagging.
+- Evaluate models using precision, recall, F1-score, and confusion matrix.
 
-Each notebook may include:
+## Important Notes
 
-1. Importing required libraries.
-2. Loading a classification dataset.
-3. Exploring class distributions.
-4. Splitting data into training and testing sets.
-5. Applying class balancing techniques.
-6. Training a classification model.
-7. Evaluating model performance.
-8. Comparing results.
-9. Writing conclusions.
+- Use the original dataset to inspect class distribution.
+- Split the data before applying resampling.
+- Apply resampling only to the training set.
+- Keep the test set untouched for final evaluation.
+- Compare techniques using appropriate evaluation metrics and cross-validation.
 
-## Notes
+## Notebook Status
 
-These notebooks are intended for practical exercises and experimentation. Actual datasets, model results, and evaluation values will be added after completing the exercises.
+- [ ] Model Interpretability Practice Lab
+- [ ] Modeling Imbalanced Classes Practice Lab
