@@ -1,29 +1,30 @@
-# Ensemble Methods and Model Interpretability Notebooks
+# Module 5 Notebooks
 
-This folder contains Jupyter Notebook files for practicing ensemble learning and exploring model interpretability.
+This folder contains Jupyter Notebook files related to Ensemble Methods and Bagging.
 
 ## Planned Notebooks
 
-| No. | Notebook | Description |
-|---|---|---|
-| 1 | `01-ensemble-methods-and-bagging.ipynb` | Exploring ensemble methods and implementing bagging. |
-| 2 | `02-random-forest-and-boosting.ipynb` | Practicing Random Forest, AdaBoost, and Gradient Boosting. |
-| 3 | `03-model-interpretability.ipynb` | Exploring model interpretation and surrogate models. |
+| Notebook | Description |
+|---|---|
+| `01-bagging-classifier.ipynb` | Implementing Bagging using bootstrap samples |
+| `02-random-forest-classifier.ipynb` | Building and evaluating a Random Forest model |
+| `03-adaboost-and-gradient-boosting.ipynb` | Implementing AdaBoost and Gradient Boosting |
+| `04-stacking-and-voting-classifier.ipynb` | Combining different models using voting and stacking |
 
-## Notebook Contents
+## Suggested Workflow
 
-Each notebook may include:
-
-1. Importing required libraries.
-2. Loading the dataset.
-3. Exploring and preparing the data.
-4. Splitting data into training and testing sets.
-5. Building ensemble models.
-6. Comparing model predictions.
-7. Exploring model interpretability techniques.
-8. Evaluating model performance.
-9. Writing conclusions.
+1. Load and explore the dataset.
+2. Prepare the training and testing data.
+3. Build a Bagging classifier.
+4. Train a Random Forest model.
+5. Implement AdaBoost and Gradient Boosting.
+6. Build a Voting Classifier.
+7. Implement a Stacking Classifier.
+8. Evaluate and compare the models.
+9. Tune model parameters using cross-validation.
 
 ## Notes
 
-These notebooks are intended for practical exercises and experimentation. Actual datasets, model results, and evaluation values will be added after completing the exercises.
+Notebook files should contain the actual code, outputs, visualizations, and observations from the course labs.
+
+Do not add experimental results until the notebooks have been executed and reviewed.
