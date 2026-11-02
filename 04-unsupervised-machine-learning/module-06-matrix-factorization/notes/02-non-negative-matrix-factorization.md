@@ -1,98 +1,111 @@
-# Non-Negative Matrix Factorization (NMF)
+# Non-Negative Matrix Factorization
 
-## 1. Definition
+## 1. Introduction
 
-Non-Negative Matrix Factorization (NMF) is a matrix decomposition technique that breaks down an original matrix into two smaller matrices, where all values in the matrices are non-negative.
+Non-Negative Matrix Factorization (NMF) is a matrix decomposition technique that represents an original nonnegative matrix using two smaller nonnegative matrices.
 
-Unlike methods that can work with negative values, NMF requires the input data to contain only non-negative values.
+The two resulting matrices are commonly called W and H.
 
-## 2. Mathematical Representation
+NMF is useful when the original data contains only positive or zero values, such as word counts and image pixel values.
 
-NMF approximates the original matrix using:
+## 2. Basic Concept
+
+Suppose the original matrix is represented by V.
+
+NMF decomposes V into two matrices:
 
 \[
 V \approx W \times H
 \]
 
-For a document-term matrix using the Scikit-learn convention:
-
-- **V**: Original document-term matrix.
-- **W**: Document-topic matrix.
-- **H**: Topic-term matrix.
-
-If the original matrix has dimensions:
-
-\[
-V \in \mathbb{R}^{m \times n}
-\]
-
-Then the factor matrices can have dimensions:
-
-\[
-W \in \mathbb{R}^{m \times k}
-\]
-
-\[
-H \in \mathbb{R}^{k \times n}
-\]
-
 Where:
 
-- \(m\) represents the number of documents.
-- \(n\) represents the number of terms.
-- \(k\) represents the number of selected components or topics.
+- **V:** Original nonnegative data matrix.
+- **W:** First factor matrix.
+- **H:** Second factor matrix.
 
-All values in V, W, and H must be non-negative.
+Both W and H contain nonnegative values.
 
-## 3. How NMF Works
+The multiplication of W and H produces an approximation of the original matrix V.
 
-The general process is:
+## 3. Nonnegative Constraint
 
-1. Prepare a non-negative input matrix.
-2. Select the number of components or topics.
-3. Decompose the original matrix into W and H.
-4. Interpret the patterns represented by the resulting matrices.
-5. Use the factor matrices to approximate the original data.
+The main characteristic of NMF is that it does not allow negative values in the input matrix or the factor matrices.
+
+This makes NMF suitable for data such as:
+
+- Word frequency or word count.
+- Image pixel intensity.
+- Other nonnegative numerical measurements.
+
+The nonnegative constraint can also make the resulting components easier to interpret in some applications.
 
 ## 4. Selecting the Number of Components
 
 The number of components is selected by the user.
 
-In topic modeling, the selected components can represent the topics that appear in the documents.
+For example, when analyzing a collection of documents, the user may choose five topics.
 
-Choosing the number of components is similar to selecting the number of components when applying PCA.
+The number of topics determines the number of components used to represent the original document data.
 
-## 5. NMF with Scikit-learn
+Selecting the number of components is an important part of applying NMF.
 
-Example implementation:
+## 5. Matrix Reconstruction
+
+After factorization, W and H can be multiplied to reconstruct an approximation of the original matrix.
+
+\[
+\hat{V} = W \times H
+\]
+
+Here, \(\hat{V}\) represents the reconstructed matrix.
+
+The reconstructed matrix approximates the original input matrix rather than necessarily reproducing every value exactly.
+
+## 6. NMF with Python
+
+The following example demonstrates how to apply NMF using Scikit-learn.
 
 ```python
 from sklearn.decomposition import NMF
 
+# Create an NMF model
 nmf = NMF(
     n_components=5,
     random_state=42,
     max_iter=500
 )
 
+# Fit the model and transform the input data
 W = nmf.fit_transform(X)
+
+# Obtain the component matrix
 H = nmf.components_
 
+# Reconstruct an approximation of the original matrix
 X_approx = W @ H
 ```
 
-Explanation:
+### Code Explanation
 
-- `n_components=5`: Defines the number of components.
-- `fit_transform(X)`: Fits the NMF model and returns the document-component matrix.
-- `components_`: Stores the component-term matrix.
+- `NMF`: Imports the Non-Negative Matrix Factorization algorithm.
+- `n_components=5`: Sets the number of components to five.
+- `random_state=42`: Helps make the initialization reproducible.
+- `max_iter=500`: Sets the maximum number of iterations.
+- `fit_transform(X)`: Fits the model and returns the W matrix.
+- `components_`: Returns the H matrix.
 - `W @ H`: Reconstructs an approximation of the original matrix.
 
-The input matrix `X` must contain non-negative values.
+**Important:** The input matrix `X` must contain only nonnegative values.
 
-## 6. Key Takeaways
+## 7. Key Takeaways
 
-- NMF decomposes an original non-negative matrix into two non-negative matrices.
-- The decomposition is represented as \(V \approx W \times H\).
-- The number of components is determined by the user.
-- NMF can help identify meaningful patterns in text and image data.
+- NMF decomposes a nonnegative matrix into W and H.
+- Both factor matrices contain nonnegative values.
+- The number of components is selected by the user.
+- The multiplication of W and H approximates the original matrix.
+- Scikit-learn provides an NMF implementation through `sklearn.decomposition`.
+
+## 8. Conclusion
+
+NMF is useful for decomposing nonnegative data into smaller representations. Its ability to represent data through nonnegative components makes it suitable for applications such as document analysis and image processing.

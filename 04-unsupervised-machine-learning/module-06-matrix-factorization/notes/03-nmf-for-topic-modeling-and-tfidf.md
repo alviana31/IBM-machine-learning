@@ -1,96 +1,88 @@
-# NMF for Topic Modeling and TF-IDF
+# NMF for Document and Topic Analysis
 
-## 1. Document-Term Matrix
+## 1. Introduction
 
-A document-term matrix is a representation of text data in the form of a matrix.
+Non-Negative Matrix Factorization can be applied to text data to identify topics within a collection of documents.
 
-Its structure consists of:
+In this application, text data is first represented as a document-term matrix. NMF then decomposes the matrix into smaller factor matrices that represent relationships between documents, topics, and terms.
 
-- Rows representing individual documents.
-- Columns representing words or terms.
-- Values representing word counts or another measure of word occurrence in each document.
+## 2. Document-Term Matrix
 
-Example:
+A document-term matrix is a numerical representation of a collection of documents.
 
-| Document | Data | Machine | Learning |
-|---|---:|---:|---:|
-| Document 1 | 3 | 2 | 1 |
-| Document 2 | 1 | 1 | 4 |
-| Document 3 | 0 | 3 | 2 |
+Its structure is:
 
-This matrix can be used as input for NMF because its values are non-negative.
+- Rows represent individual documents.
+- Columns represent words or terms.
+- Values represent the frequency of a word or another numerical measure of its occurrence in a document.
 
-## 2. NMF for Topic Modeling
+For example:
 
-NMF can be used to identify topics within a collection of documents.
+| Document | Machine | Learning | Data | Model |
+|---|---:|---:|---:|---:|
+| Document 1 | 2 | 3 | 1 | 2 |
+| Document 2 | 1 | 2 | 3 | 1 |
+| Document 3 | 0 | 1 | 2 | 3 |
 
-The decomposition produces two matrices:
+The values in this matrix are nonnegative, making it suitable for NMF.
 
-### W – Document-Topic Matrix
+## 3. Applying NMF to Documents
 
-W represents the relationship between documents and topics.
+NMF decomposes the document-term matrix into two smaller matrices.
 
-Each value indicates how strongly a document is associated with a particular topic.
+Using the conventional document-by-term orientation:
 
-### H – Topic-Term Matrix
+\[
+V \approx W \times H
+\]
 
-H represents the relationship between topics and terms.
+Where:
 
-The values indicate how strongly a word contributes to a particular topic.
+- **V:** Original document-term matrix.
+- **W:** Document-topic matrix.
+- **H:** Topic-term matrix.
 
-Together, W and H can be used to approximate the original document-term matrix.
+### 3.1 Matrix W
 
-**Note:** Matrix orientation and naming can vary depending on the implementation. This documentation follows the Scikit-learn convention, where W represents documents-to-topics and H represents topics-to-terms.
+W describes how strongly each document is associated with each topic.
 
-## 3. Understanding Topics
+Each row represents a document, while each column represents a topic.
 
-After applying NMF, the terms with the highest weights in each component can be examined to understand the topic represented by that component.
+### 3.2 Matrix H
 
-For example, a component containing words such as:
+H describes how strongly each term is associated with each topic.
 
-- computer
-- software
-- programming
-- algorithm
+Each row represents a topic, while each column represents a term.
 
-may represent a topic related to computer science.
+Together, W and H provide a topic-based representation of the original document collection.
 
-The topic interpretation depends on the input documents and the resulting word weights.
+## 4. Understanding Topics
 
-## 4. TF-IDF
+Suppose a document collection contains articles about technology, education, and healthcare.
 
-TF-IDF stands for Term Frequency–Inverse Document Frequency.
+After applying NMF, the model may identify several groups of terms that frequently occur together.
 
-It is a method for weighting words in a text collection.
+For example:
 
-TF-IDF considers:
+| Possible Topic | Example Terms |
+|---|---|
+| Technology | computer, software, system |
+| Education | student, teacher, school |
+| Healthcare | patient, hospital, treatment |
 
-- **Term Frequency (TF):** How frequently a term appears in a document.
-- **Inverse Document Frequency (IDF):** How informative a term is across the document collection.
+These are illustrative examples of how topics may be interpreted. The actual topics depend on the dataset and the selected number of components.
 
-TF-IDF can reduce the influence of terms that appear frequently across many documents and give more weight to terms that are more distinctive.
+## 5. Choosing the Number of Topics
 
-TF-IDF is a text representation and weighting method, not a matrix factorization algorithm.
+The number of topics is determined by the user through the number of NMF components.
 
-Its output can be used as input to NMF when the resulting matrix is non-negative.
-
-## 5. Example Using Scikit-learn
+For example:
 
 ```python
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 
-documents = [
-    "Machine learning studies data and algorithms",
-    "Deep learning uses neural networks",
-    "Programming helps develop software applications"
-]
-
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(documents)
-
 nmf = NMF(
-    n_components=2,
+    n_components=5,
     random_state=42,
     max_iter=500
 )
@@ -99,17 +91,44 @@ W = nmf.fit_transform(X)
 H = nmf.components_
 ```
 
-In this example:
+In this example, the model uses five components to represent the document-term matrix.
 
-1. Documents are converted into numerical features using TF-IDF.
-2. NMF decomposes the resulting non-negative matrix.
-3. W represents document-topic relationships.
-4. H represents topic-term relationships.
+Choosing a suitable number of topics is important because it affects how the documents are represented.
 
-## 6. Key Takeaways
+## 6. Optional: TF-IDF
 
-- A document-term matrix represents documents and their terms numerically.
-- NMF can discover topics by decomposing a document-term matrix.
-- W represents document-topic relationships in the Scikit-learn convention.
-- H represents topic-term relationships.
-- TF-IDF is used to weight text features and can provide non-negative input for NMF.
+The course also introduces TF-IDF as an optional topic.
+
+Term Frequency-Inverse Document Frequency (TF-IDF) is a method for representing text numerically by considering how important a term is within a document and across a collection of documents.
+
+A nonnegative TF-IDF matrix can be used as input for NMF.
+
+The input must remain nonnegative to satisfy the NMF requirement.
+
+## 7. NMF Compared with PCA
+
+NMF and Principal Component Analysis (PCA) are both techniques used to represent data through a smaller number of components.
+
+However, they have different characteristics.
+
+| Aspect | NMF | PCA |
+|---|---|---|
+| Input values | Must be nonnegative | Can contain negative values |
+| Components | Nonnegative | Can contain positive and negative values |
+| Main idea | Decompose data into nonnegative factors | Find directions that capture variance |
+| Example application | Document topic analysis | Dimensionality reduction |
+
+NMF can provide components that are easier to interpret for applications involving word counts and topic representations.
+
+## 8. Key Takeaways
+
+- A document-term matrix represents documents as rows and terms as columns.
+- NMF decomposes the matrix into W and H.
+- W represents the relationship between documents and topics.
+- H represents the relationship between topics and terms.
+- The number of topics is selected by the user.
+- TF-IDF can be used as an optional text representation when its values are nonnegative.
+
+## 9. Conclusion
+
+NMF provides a way to discover topic patterns in a collection of documents. By decomposing a document-term matrix into document-topic and topic-term representations, it helps simplify text data and reveal relationships between documents and words.

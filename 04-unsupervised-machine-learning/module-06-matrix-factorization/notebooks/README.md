@@ -1,22 +1,38 @@
-# Module 6 Notebooks
+# Module 6 – Notebooks
 
-This folder contains Jupyter Notebook files related to Matrix Factorization and Non-Negative Matrix Factorization (NMF).
+This folder contains practical notebooks related to Matrix Factorization and Non-Negative Matrix Factorization (NMF).
 
-## Planned Notebook
+## Suggested Notebook Activities
 
-| Notebook | Description |
-|---|---|
-| `01-non-negative-matrix-factorization.ipynb` | Implementation of NMF using Python and Scikit-learn |
-| `02-nmf-topic-modeling.ipynb` | Applying NMF to text data for topic modeling |
+### 1. NMF Demonstration Lab
+- Prepare a nonnegative input matrix.
+- Import NMF from Scikit-learn.
+- Set the number of components.
+- Fit and transform the input data.
+- Examine the W and H matrices.
+- Reconstruct an approximation of the original matrix.
 
-## Suggested Workflow
+### 2. NMF Practice Lab
+- Apply NMF to a document-term matrix.
+- Explore the relationship between documents, topics, and terms.
+- Experiment with different numbers of components.
+- Interpret the resulting topic representations.
 
-1. Prepare a non-negative data matrix.
-2. Apply NMF using Scikit-learn.
-3. Select the number of components.
-4. Examine the W and H matrices.
-5. Interpret the resulting components or topics.
+### 3. Optional: TF-IDF
+- Convert text documents into TF-IDF representations.
+- Check that the resulting values are nonnegative.
+- Apply NMF to the transformed text data.
 
-## Notes
+## Important Notes
 
-Notebook files should contain the actual code, outputs, and observations from the course labs. No experimental results are included here until the notebooks have been completed.
+- NMF requires nonnegative input data.
+- The number of components must be selected before fitting the model.
+- W and H are both nonnegative matrices.
+- The product of W and H approximates the original matrix.
+- Interpret topics based on the terms and document patterns produced by the model.
+
+## Notebook Status
+
+- [ ] NMF Demonstration Lab
+- [ ] NMF Practice Lab
+- [ ] Optional TF-IDF Practice
