@@ -1,39 +1,62 @@
-﻿# Module 1 – Introduction to Unsupervised Learning and K-Means Clustering
+﻿# Unsupervised Machine Learning
 
 ## Overview
 
-This module introduces unsupervised learning and clustering techniques. It focuses on how unlabeled data can be grouped based on similarities between data points.
+This course explores Unsupervised Machine Learning techniques, focusing on discovering patterns and structures in data without predefined labels.
 
-The main algorithm covered in this module is K-Means clustering, including its initialization process, the selection of the optimal number of clusters, and the Elbow Method. The module also introduces the Mixture of Gaussians approach.
+The course covers clustering algorithms, distance metrics, dimensionality reduction, Kernel PCA, Multidimensional Scaling (MDS), and Matrix Factorization.
 
 ## Learning Objectives
 
-After completing this module, I should be able to:
+After completing this course, I should be able to:
 
-- Explain the concept of unsupervised learning.
-- Understand clustering and its applications.
-- Describe how the K-Means algorithm works.
-- Understand centroid initialization and cluster assignment.
-- Determine the number of clusters using the Elbow Method.
-- Understand the basic concept of Mixture of Gaussians.
-- Implement clustering techniques using Python and Scikit-learn.
+- Understand the fundamentals of unsupervised learning.
+- Apply clustering algorithms to group similar data points.
+- Understand different distance metrics and computational challenges in clustering.
+- Implement common clustering algorithms.
+- Apply dimensionality reduction techniques.
+- Understand Kernel PCA and Multidimensional Scaling.
+- Apply Non-Negative Matrix Factorization to nonnegative data.
 
-## Topics Covered
+## Course Modules
 
-1. Introduction to Unsupervised Learning
-2. Use Cases of Clustering
-3. Introduction to Clustering
-4. K-Means Clustering
-5. K-Means Initialization
-6. Selecting the Right Number of Clusters
-7. Elbow Method and Applying K-Means
-8. Mixture of Gaussians
+### Module 1 – Introduction to Unsupervised Learning and K-Means
+- Introduction to Unsupervised Learning
+- Clustering concepts and applications
+- K-Means Clustering
+- K-Means initialization
+- Selecting the number of clusters
+- Elbow Method
+- Mixture of Gaussians
 
-## Notes
+### Module 2 – Computational Hurdles of Clustering
+- Distance Metrics
+- Curse of Dimensionality
+- Computational challenges in clustering
 
-- [Introduction to Unsupervised Learning](notes/01-introduction-to-unsupervised-learning.md)
-- [K-Means Clustering](notes/02-k-means-clustering.md)
-- [Selecting Clusters and Mixture of Gaussians](notes/03-selecting-clusters-and-mixture-of-gaussians.md)
+### Module 3 – Common Clustering Algorithms
+- Hierarchical Agglomerative Clustering
+- DBSCAN
+- Mean Shift
+- Comparing Clustering Algorithms
+
+### Module 4 – Dimensionality Reduction
+- Introduction to Dimensionality Reduction
+- Principal Component Analysis (PCA)
+- Singular Value Decomposition (SVD)
+- Image Compression
+
+### Module 5 – Kernel PCA and Multidimensional Scaling
+- Kernel Principal Component Analysis
+- Kernel Functions and Parameters
+- Multidimensional Scaling (MDS)
+
+### Module 6 – Matrix Factorization
+- Introduction to Matrix Factorization
+- Non-Negative Matrix Factorization (NMF)
+- Document-Term Matrix
+- Document and Topic Analysis
+- Optional TF-IDF
 
 ## Tools and Libraries
 
@@ -44,17 +67,33 @@ After completing this module, I should be able to:
 - Matplotlib
 - Scikit-learn
 
-## Practice
+## Repository Structure
 
-The module includes K-Means demonstrations, a K-Means clustering practice lab, and a Mixture of Gaussians practice lab.
+```text
+04-unsupervised-machine-learning/
+├── module-01-introduction-and-k-means/
+├── module-02-computational-hurdles-of-clustering/
+├── module-03-common-clustering-algorithms/
+├── module-04-dimensionality-reduction/
+├── module-05-kernel-pca-and-multidimensional-scaling/
+├── module-06-matrix-factorization/
+├── notebooks/
+└── README.md
+```
 
-## Progress
+## Learning Progress
 
-- [ ] Review all learning materials
-- [ ] Complete K-Means practice
-- [ ] Complete Mixture of Gaussians practice
-- [ ] Complete Module 1 Quiz
+- [ ] Complete Module 1 – Introduction and K-Means
+- [ ] Complete Module 2 – Computational Hurdles of Clustering
+- [ ] Complete Module 3 – Common Clustering Algorithms
+- [ ] Complete Module 4 – Dimensionality Reduction
+- [ ] Complete Module 5 – Kernel PCA and MDS
+- [ ] Complete Module 6 – Matrix Factorization
+
+## Course Summary
+
+This course provides practical knowledge of unsupervised learning methods for discovering patterns, grouping data, reducing dimensionality, and extracting meaningful representations from datasets.
 
 ## Reference
 
-IBM Machine Learning – Unsupervised Machine Learning, Module 1.
+IBM Machine Learning – Unsupervised Machine Learning.
